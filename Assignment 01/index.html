@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 01 Practice</title>
+</head>
+<body>
+    <h1 id="result">JavaScript Objects</h1>
+    <script>
+        // This is a single-line comment. You can use it for notes.
+        (function(){
+           "use strict";
+           /*
+           This is a multi-line comment.
+           We created a "person" Object, and added Properties.
+            */
+           var person = {
+                "lastName": "Aung",
+                "firstName": "Ye Tun",
+                "age": 52,
+                "heightFt": 5,
+                "heightIn": 10,
+
+                "totalHeight": function() {
+                  var feetInches = this.heightFt + "Ft " + this.heightIn + "In ";
+                  return feetInches;
+                },
+           };
+
+           // We output the Object to the Console of the Web Browser
+           console.log(person);
+           
+           /*
+            JavaScript (often) uses Methods on Objects.
+            Below, we used the .write() Method to output
+            the value of the lastName Property of the person Object
+            to the document Object (the Viewport)
+           */
+
+           document.write("Welcome ")
+           document.write(person.firstName + " ");
+           document.write(person.lastName);
+           document.write(', you are ' + person.age + ' years old.');
+
+           document.write("<br />")
+           document.write("You are " + person.totalHeight() + "tall.")
+        }());       
+    </script>
+</body>
+<!-- 
+    Name:           Ye Tun Aung
+    Email:          yta.megroup@gmail.com
+    Project:        Chapter 01
+    Description:    Look at JS Objects
+    Date:           June 06, 2019
+-->
+</html>

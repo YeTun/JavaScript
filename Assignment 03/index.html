@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 03 Practice</title>
+</head>
+<body>
+    <h1>An Album from my Collection</h1>
+    <div id="showAlbum"></div>
+    <script>
+        (function(){
+            "use strict";
+
+            // Construct Notation for creating Object with 4 parameters
+            function Album(albumName, group, year, genre) {
+                // Properties
+                this.albumName  = albumName;
+                this.group      = group;
+                this.year       = year;
+                this.genre      = genre;
+
+                // Methods
+                this.released = function() {
+                    var currentYear = new Date();
+                    var yearOffset  = currentYear.getFullYear() - this.year;
+                    return yearOffset;
+                }
+            } // End of Album() Object
+
+            // Instantiated 3 new Albums, based on the Album Object.
+            var album1 = new Album("Nevermind", "Nirvana", 1991, "Alternative"),
+                album2 = new Album("Ramones", "Ramones", 1976, "Punk"),
+                album3 = new Album("mc chris is dead", "mc chris", 2008, "Nerdcore Hip-Hop"),
+                album4 = new Album("The Chronic", "Dr. Dre", 1992, "Rap");
+
+            // Console output of various Objects/Properties/Methods
+            console.log(album1.group);
+            console.log(album1.released());
+            console.log(album3.genre);
+
+            // Storing each of the separate Objects, in an Array
+            var albumCollection = [album1, album2, album3, album4];
+
+            console.log(albumCollection[1].group);
+
+            /*Create a random nunmber, up to the maximum of the Length of the Array, and round it down, always.*/
+            var randomAlbum = Math.floor(Math.random() * albumCollection.length);
+            console.log(randomAlbum);
+
+            // Create a JS Object based on the HTML Node, above
+            var elShowAlbum = document.getElementById("showAlbum");
+
+            // Display only text content in the HTML Node
+            //elShowAlbum.innerHTML = "<h2>Hello</h2>";
+
+            // Create Message to display
+            var msg = "The album <em>" + albumCollection[randomAlbum].albumName
+            + "</em> by " + albumCollection[randomAlbum].group 
+            + " was published in " + albumCollection[randomAlbum].year 
+            + " ( " + albumCollection[randomAlbum].released() + " years ago)."
+            + "<br />The genre was " + albumCollection[randomAlbum].genre + ".";
+            
+            // In the HTML Node, display a random Album's Property
+            elShowAlbum.innerHTML = msg;
+        }());
+    </script>
+</body>
+<!-- 
+    Name:           Ye Tun Aung
+    Email:          yta.megroup@gmail.com
+    Project:        Chapter 03
+    Description:    Look at Functions, Methods & Objects
+    Date:           June 06, 2019
+ -->
+</html>

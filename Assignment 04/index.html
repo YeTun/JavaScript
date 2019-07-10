@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 04 Practice</title>
+</head>
+<body>
+    <h2>Original Band Members</h2>
+    <div id="divShowOriginalBand"></div>
+
+    <h2>New Band Members</h2>
+    <button id="btnMakeName">Make a name</button>
+    <div id="divShowNewBand"></div>
+    <script>
+        (function(){
+            "use strict";
+
+            // Arrays of Band Info
+            var lastNames = ["Aung", "Ye Tun", "Ye Tun", "Win"];
+            var firstNames = ["Ye Tun", "Thura", "Maythansin", "Hla Hla"];
+            var bandNames = ["The Wild One", "Dj", "Hop", "Iron Cross"];
+            var ages = [];
+            var lastNameslength = lastNames.length;
+
+            // For Loop (Conditional Statement) to generate random ages, in a range
+            for(var i = 0; i < lastNameslength; i++) {
+                // # between 12 & 52
+                var randomAgesTmp = (Math.round(Math.random() * 40)) + 12;
+                ages.push(randomAgesTmp);
+            } // End of for() Loop for generating ages
+
+            console.log(ages);
+
+            var OriginalBandPerson = [];
+            var randomBandPerson = [];
+
+            // Create Objects of the Divs on-screen
+            var elDivShowOriginalBand = document.getElementById("divShowOriginalBand");
+            var elDivShowNewBand = document.getElementById("divShowNewBand");
+
+            // Create an Object of the Button on-screen
+            var elBtnMakeName = document.getElementById("btnMakeName");
+
+            function BandMember(lastName, firstName, bandName, age) {
+                this.lastName   = lastName;
+                this.firstName  = firstName;
+                this.bandName   = bandName;
+                this.age        = age;
+
+                this.info = function() {
+                    var fullBandMemberInfo = this.firstName + " " + this.lastName + " is " + 
+                    this.age + " years old, from " + this.bandName + ".";
+                    return fullBandMemberInfo;
+                }
+            } // End of BandMember() Object
+
+            for(var i = 0; i < lastNameslength; i++) {
+                var OriginalBandPersonTmp = new BandMember(
+                    lastNames[i],
+                    firstNames[i],
+                    bandNames[i],
+                    ages[i],
+                );
+                
+                OriginalBandPerson.push(OriginalBandPersonTmp);
+                elDivShowOriginalBand.innerHTML += "<p>" + OriginalBandPerson[i].info() + "</p>"
+            } // End for Loop of creating a BandMember Object and store it in the Array
+
+            function fnGenerateNames() {
+                // console.log("clicked!");
+                // Makes a copy of an Array
+                var tmpLastNames = lastNames.slice(0);
+                var tmpFirstNames = firstNames.slice(0);
+                var tmpBandNames = bandNames.slice(0);
+                var tmpAges = ages.slice(0);
+                var tmpLastNamesLength = tmpLastNames.length;
+
+                elDivShowNewBand.innerHTML = "";
+                randomBandPerson = [];
+
+                for(var i = 0; i < tmpLastNamesLength; i++) {
+                    var randomLastNameNum = Math.floor(Math.random()* tmpLastNames.length);
+                    var randomFirstNameNum = Math.floor(Math.random() * tmpFirstNames.length);
+                    var randomBandNames = Math.floor(Math.random() * tmpBandNames.length);
+                    var randomAges = Math.floor(Math.random() * tmpAges.length);
+
+                    var randomBandPersonTmp = new BandMember(
+                        tmpLastNames[randomLastNameNum],
+                        tmpFirstNames[randomFirstNameNum],
+                        tmpBandNames[randomBandNames],
+                        tmpAges[randomAges],
+                    );
+                    
+                    // Splice to remove an item from an Array
+                    tmpLastNames.splice(randomLastNameNum, 1);
+                    tmpFirstNames.splice(randomFirstNameNum, 1);
+                    tmpBandNames.splice(randomBandNames, 1);
+                    tmpAges.splice(randomAges, 1);
+
+                    randomBandPerson.push(randomBandPersonTmp);
+
+                    elDivShowNewBand.innerHTML += "<p>" + randomBandPerson[i].info() + "</p>";
+                } // End for() Loop of generating random names
+
+            } // End fnGenerateNames()
+            
+            // Event Listener, to make the Button work.
+            elBtnMakeName.addEventListener("click", fnGenerateNames, false);            
+        }());
+    </script>
+</body>
+    <!-- 
+        Name:           Ye Tun Aung
+        Email:          yta.megroup@gmail.com
+        Project:        Decisions & Loops
+        Description:    Look at iteration and looping construct
+        Date:           June 06, 2019
+    -->
+</html>

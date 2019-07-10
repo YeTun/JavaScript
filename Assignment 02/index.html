@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 02 Practice</title>
+</head>
+<body>
+    <h1>The <span id="spanTotalComics">X</span> Most Valuable Comics on eBay</h1>
+    <ol>
+        <li id="liComic1"></li>
+        <li id="liComic2"></li>
+        <li id="liComic3"></li>
+        <li id="liComic4"></li>
+        <li id="liComic5"></li>
+    </ol>
+    <div id="divMessage"></div>
+    <script>
+        "use strict";
+
+        var elLiComic1 = document.getElementById("liComic1"),
+            elLiComic2 = document.getElementById("liComic2"),
+            elLiComic3 = document.getElementById("liComic3"),
+            elLiComic4 = document.getElementById("liComic4"),
+            elLiComic5 = document.getElementById("liComic5");
+
+        var elDivMessage = document.getElementById("divMessage"),
+            elSpanTotalComics = document.getElementById("spanTotalComics");
+
+        var comicName = [
+            "Amazing Spider-Man #300",
+            "Spawn #1",
+            "Archie's Madhouse #22",
+            "Batman #635",
+            "Saga #1",
+            ],
+            comicPrice = [100.01,25.25,623.25,125.98,150.52],
+            comicPriceTotal = comicPrice[0] + comicPrice[1] +
+                            comicPrice[2] + comicPrice[3] + comicPrice[4];
+        
+        console.log(comicName);
+        console.log(comicPrice[0]);
+        console.log(comicPriceTotal);
+
+        elLiComic1.textContent = comicName[0] + " - $" + comicPrice[0];
+        elLiComic2.textContent = comicName[1] + " - $" + comicPrice[1];
+        elLiComic3.textContent = comicName[2] + " - $" + comicPrice[2];
+        elLiComic4.textContent = comicName[3] + " - $" + comicPrice[3];
+        elLiComic5.textContent = comicName[4] + " - $" + comicPrice[4];
+
+        elDivMessage.textContent = "The total value of these comics is $" +
+                                    comicPriceTotal.toFixed(2);
+        elSpanTotalComics.textContent = comicName.length; 
+    </script>
+</body>
+<!-- 
+    Name:           Ye Tun Aung
+    Email:          yta.megroup@gmail.com
+    Project:        Chapter 02
+    Description:    Look at JS instructions
+    Date:           June 06, 2019
+-->
+</html>
