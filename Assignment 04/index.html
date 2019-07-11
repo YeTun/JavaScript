@@ -11,6 +11,7 @@
     <h2>New Band Members</h2>
     <button id="btnMakeName">Make a name</button>
     <div id="divShowNewBand"></div>
+
     <script>
         (function(){
             "use strict";
@@ -20,19 +21,19 @@
             var firstNames = ["Ye Tun", "Thura", "Maythansin", "Hla Hla"];
             var bandNames = ["The Wild One", "Dj", "Hop", "Iron Cross"];
             var ages = [];
-            var lastNameslength = lastNames.length;
+            // var lastNameslength = lastNames.length;
 
             // For Loop (Conditional Statement) to generate random ages, in a range
-            for(var i = 0; i < lastNameslength; i++) {
+            for(var i in lastNames) {
                 // # between 12 & 52
-                var randomAgesTmp = (Math.round(Math.random() * 40)) + 12;
+                let randomAgesTmp = (Math.round(Math.random() * 40)) + 12;
                 ages.push(randomAgesTmp);
             } // End of for() Loop for generating ages
 
             console.log(ages);
 
             var OriginalBandPerson = [];
-            var randomBandPerson = [];
+            // var randomBandPerson = [];
 
             // Create Objects of the Divs on-screen
             var elDivShowOriginalBand = document.getElementById("divShowOriginalBand");
@@ -54,8 +55,8 @@
                 }
             } // End of BandMember() Object
 
-            for(var i = 0; i < lastNameslength; i++) {
-                var OriginalBandPersonTmp = new BandMember(
+            for(var i in lastNames) {
+                let OriginalBandPersonTmp = new BandMember(
                     lastNames[i],
                     firstNames[i],
                     bandNames[i],
@@ -63,7 +64,7 @@
                 );
                 
                 OriginalBandPerson.push(OriginalBandPersonTmp);
-                elDivShowOriginalBand.innerHTML += "<p>" + OriginalBandPerson[i].info() + "</p>"
+                elDivShowOriginalBand.innerHTML += "<p>" + OriginalBandPerson[i].info() + "</p>";
             } // End for Loop of creating a BandMember Object and store it in the Array
 
             function fnGenerateNames() {
@@ -73,18 +74,18 @@
                 var tmpFirstNames = firstNames.slice(0);
                 var tmpBandNames = bandNames.slice(0);
                 var tmpAges = ages.slice(0);
-                var tmpLastNamesLength = tmpLastNames.length;
+                // var tmpLastNamesLength = tmpLastNames.length;
 
+                var randomBandPerson = [];
                 elDivShowNewBand.innerHTML = "";
-                randomBandPerson = [];
 
-                for(var i = 0; i < tmpLastNamesLength; i++) {
-                    var randomLastNameNum = Math.floor(Math.random()* tmpLastNames.length);
-                    var randomFirstNameNum = Math.floor(Math.random() * tmpFirstNames.length);
-                    var randomBandNames = Math.floor(Math.random() * tmpBandNames.length);
-                    var randomAges = Math.floor(Math.random() * tmpAges.length);
+                for(var i in lastNames) {
+                    let randomLastNameNum = Math.floor(Math.random()* tmpLastNames.length);
+                    let randomFirstNameNum = Math.floor(Math.random() * tmpFirstNames.length);
+                    let randomBandNames = Math.floor(Math.random() * tmpBandNames.length);
+                    let randomAges = Math.floor(Math.random() * tmpAges.length);
 
-                    var randomBandPersonTmp = new BandMember(
+                    let randomBandPersonTmp = new BandMember(
                         tmpLastNames[randomLastNameNum],
                         tmpFirstNames[randomFirstNameNum],
                         tmpBandNames[randomBandNames],
@@ -105,7 +106,7 @@
             } // End fnGenerateNames()
             
             // Event Listener, to make the Button work.
-            elBtnMakeName.addEventListener("click", fnGenerateNames, false);            
+            elBtnMakeName.addEventListener("click", fnGenerateNames, false);         
         }());
     </script>
 </body>
@@ -114,6 +115,6 @@
         Email:          yta.megroup@gmail.com
         Project:        Decisions & Loops
         Description:    Look at iteration and looping construct
-        Date:           June 06, 2019
+        Date:           July 11, 2019 (Modified)
     -->
 </html>
