@@ -5,7 +5,7 @@
     var maxStats = 6,
         maxStatsValue = 7;
 
-    var heroNames = ["Spider-Man", "Daredevil", "Squirrel Girl"],
+    var heroNames = ["Spider-Man", "Daredevil", "Squirrel Girl", "Thing", "Jean Grey"],
         heroStrength = [],
         heroSpeed = [],
         heroAgility = [],
@@ -13,9 +13,8 @@
         heroDurability = [],
         heroIntelligence = [],
 
-        heroNamesLength = heroNames.length,
         heroAll = [],
-        heroAllLength = heroAll.length,
+        
         heroImage = [
             // "https://vmcink.files.wordpress.com/2016/10/spiderman.png",
             // "https://vmcink.files.wordpress.com/2016/10/daredevil.png",
@@ -23,10 +22,12 @@
             "images/spiderman.png",
             "images/daredevil.png",
             "images/squirrelgirl.png",
+            "images/thing.png",
+            "images/jeangrey.png",
         ];
 
     for (var i = 0; i < maxStats; i++) {
-        var tempHeroStrength = Math.ceil(Math.random() * maxStatsValue),
+        let tempHeroStrength = Math.ceil(Math.random() * maxStatsValue),
             tempHeroSpeed = Math.ceil(Math.random() * maxStatsValue),
             tempHeroAgility = Math.ceil(Math.random() * maxStatsValue),
             tempHeroStamina = Math.ceil(Math.random() * maxStatsValue),
@@ -41,7 +42,7 @@
         heroIntelligence.push(tempHeroIntelligence);
     } // End For Loop, Hero Powers
 
-    var villainNames = ["Venom", "Kingpin", "Black Cat"],
+    var villainNames = ["Venom", "Kingpin", "Black Cat", "Dr. Doom", "Magneto", "Super Skrull"],
         villainStrength = [],
         villainSpeed = [],
         villainAgility = [],
@@ -49,9 +50,8 @@
         villainDurability = [],
         villainIntelligence = [],
 
-        villainNamesLength = villainNames.length,
         villainAll = [],
-        villainAllLength = villainAll.length,
+        
         villainImage = [
             // "https://vmcink.files.wordpress.com/2016/10/venom.png",
             // "https://vmcink.files.wordpress.com/2016/10/kingpin.png",
@@ -59,10 +59,13 @@
             "images/venom.png",
             "images/kingpin.png",
             "images/blackcat.png",
+            "images/drdoom.png",
+            "images/magneto.png",
+            "images/superskrull.png",
         ];
 
     for (var i = 0; i < maxStats; i++) {
-        var tempVillainStrength = Math.ceil(Math.random() * maxStatsValue),
+        let tempVillainStrength = Math.ceil(Math.random() * maxStatsValue),
             tempVillainSpeed = Math.ceil(Math.random() * maxStatsValue),
             tempVillainAgility = Math.ceil(Math.random() * maxStatsValue),
             tempVillainStamina = Math.ceil(Math.random() * maxStatsValue),
@@ -91,7 +94,7 @@
             var allPower = this.strength + this.speed + this.agility +
                 this.stamina + this.durability + this.intelligence;
             return allPower;
-        } // End of power() Object
+        } // End of power() Method
 
         this.stats = function () {
             var allStats = "<ul>"
@@ -103,11 +106,11 @@
                 + "<li>Intelligence: " + this.intelligence + "</li>"
             "</ul>";
             return allStats;
-        } // End stat()
+        } // End stats() Method
     } // End SuperCharacter() Object
 
-    for (var i = 0; i < heroNamesLength; i++) {
-        var aHero = new SuperCharacter(
+    for (var i in heroNames) {
+        let aHero = new SuperCharacter(
             heroNames[i],
             heroStrength[i],
             heroSpeed[i],
@@ -120,7 +123,7 @@
         heroAll.push(aHero);
     } // End Hero Creation For Loop
 
-    for (var i = 0; i < villainNamesLength; i++) {
+    for (var i in villainNames) {
         var aVillain = new SuperCharacter(
             villainNames[i],
             villainStrength[i],
@@ -137,11 +140,11 @@
     // console.log("All Heroes: " + heroAll);
     // console.log("All Villains: " + villainAll);
 
-    // console.log("Hero: " + heroAll[0].name + heroAll[2].power());
-    // console.log("Villains: " + villainAll[0].name + villainAll[2].power());
+    // console.log("Hero: " + heroAll[0].name + " Power: " + heroAll[2].power());
+    // console.log("Villains: " + villainAll[0].name + " Power: " + villainAll[2].power());
 
-    heroAllLength = heroAll.length;
-    villainAllLength = villainAll.length;
+    var heroAllLength = heroAll.length;
+    var villainAllLength = villainAll.length;
 
     var elBtnFight = document.getElementById("btnFight"),
         elDivShowFight = document.getElementById("divShowFight"),
@@ -157,8 +160,10 @@
         var randomHero = Math.floor(Math.random() * heroAllLength),
             randomVillain = Math.floor(Math.random() * villainAllLength);
 
-        console.log("Hero: " + heroAll[randomHero].name + heroAll[randomHero].power());
-        console.log("Villains: " + villainAll[randomVillain].name + villainAll[randomVillain].power());
+        console.log("Hero: " + heroAll[randomHero].name +
+                    " Power: " + heroAll[randomHero].power());
+        console.log("Villains: " + villainAll[randomVillain].name +
+                    " Power: " + villainAll[randomVillain].power());
 
         if (heroAll[randomHero].power() === villainAll[randomVillain].power()) {
             console.log("It's a tie!");
@@ -192,10 +197,10 @@
             elImgAll[1].className = "imageHeight";
             elUlAll[1].className = "textAlign";
 
-            elDivCenterCol.innerHTML = "<h3>Hero Win!</h3>";
+            elDivCenterCol.innerHTML = "<h3>Hero Wins!</h3>";
             elDivCenterCol.className = "fightWin";
         } else {
-            console.log("Hero Lost!");
+            console.log("Hero Loses!");
 
             elDivLeftCol.innerHTML = "<h2>" + heroAll[randomHero].name + "</h2>";
             elDivLeftCol.innerHTML += "<img src='" + heroAll[randomHero].image + "'>";
