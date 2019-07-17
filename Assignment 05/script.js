@@ -124,7 +124,7 @@
     } // End Hero Creation For Loop
 
     for (var i in villainNames) {
-        var aVillain = new SuperCharacter(
+        let aVillain = new SuperCharacter(
             villainNames[i],
             villainStrength[i],
             villainSpeed[i],
