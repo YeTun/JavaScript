@@ -1,0 +1,24 @@
+#formHero {
+    padding: 1em;
+    width: 26em;
+}
+
+label {
+    width: 6em;
+    display: block;
+    float: left;
+}
+
+input[type=button],
+input[type=reset] {
+    float: right;
+    margin: 0.25em;
+}
+
+.tableStyle,
+.tableStyle th,
+.tableStyle td {
+    width: 85%;
+    border: 1px solid black;
+    table-layout: fixed;
+}
