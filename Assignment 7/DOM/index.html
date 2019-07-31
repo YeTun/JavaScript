@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<title>Chapter 07 Practice</title>
+	<style>
+		fieldset { width: 10em; }
+	</style>
+<body>
+	<h1>Star Wars Droid Name Generator</h1>
+	<form id="swForm"> <!-- Where User info is collected -->
+	<fieldset>
+		<legend>About You</legend>
+		<label for="inFirst">First Name: </label>
+		<input type="text" placeholder="Thura" name="inFirst" id="inFirst"><br>
+		<label for="inLast">Last Name: </label>
+		<input type="text" placeholder="Ye Tun" name="inLast" id="inLast"><br>
+		<label for="inDOB">Birthday: </label>
+		<input type="date" name="inDOB" id="inDOB"><br>
+	</fieldset>
+	<p>
+		<input type="button" value="Go" id="btnGo">
+		<input type="button" value="Clear" id="btnClear">
+	</p>
+	</form>
+	<div id="divShow"> <!-- Where ALL results are shown -->
+		<div id="errorMsg">&nbsp;</div>
+		<div id="nameYou">&nbsp;</div>
+		<div id="nameDroid">&nbsp;</div>
+		<div id="nameType">&nbsp;</div>
+		<div><img src="" id="droidPic"></div>
+	</div>
+	<script src="script.js"></script>
+</body>
+<!-- 
+    Name:           Ye Tun Aung
+    Email:          yta.megroup@gmail.com
+    Project:        Star Wars Droid Name Generator
+    Description:    DOM Manipulation
+    Date:           July 31, 2019
+-->
+</html>

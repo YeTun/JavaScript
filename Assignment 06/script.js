@@ -12,7 +12,7 @@ var nameReal = "",
     elShowResult = document.getElementById("divResult"),    
 
     allHeroes = [],
-    maxChars = 140,
+    maxChars = 14,
 
     elBtnSave = document.getElementById("btnSave"),
     elBtnReset = document.getElementById("btnReset"),
@@ -86,21 +86,34 @@ function fnClearForm() {
     document.getElementById("inSuperPower").value = "";
     document.getElementById("inSuperOrigin").value = "";
 
-    elSuperOrigin.disbaled = false;
+    elSuperOrigin.disabled = false;
     elCharDisplay.textContent = maxChars;
 } // END fnClearForm()
 
-function fnCharCount() {
-    var textEntered,
-        counter,
-        lastKey;
+function fnClear() {
+    elShowResult.textContent = "";
+}
+
+// function fnCharCount() {
+//     var textEntered,
+//         counter;
     
-    textEntered = document.getElementById("inSuperOrigin").value;
-    counter = maxChars - textEntered.length;
+//     textEntered = document.getElementById("inSuperOrigin").value;
+//     counter = maxChars - textEntered.length;
+//     elCharDisplay.textContent = counter;
+
+//     if(counter <= 0) {
+//         elSuperOrigin.disabled = true;
+//     }
+// } // END fnCharCount()
+
+let counter = maxChars;
+function fnCharCount() {
+    counter--
     elCharDisplay.textContent = counter;
 
-    if(counter <= 0) {
-        elSuperOrigin.disbaled = true;
+    if (counter <= 0) {
+        elSuperOrigin.disabled = true;
     }
 } // END fnCharCount()
 
@@ -133,4 +146,5 @@ elSuperOrigin.addEventListener("keydown", fnCharCount, false);
 elFormHero.addEventListener("keydown", fnChangeForm, false);
 elBtnSave.addEventListener("click", fnSaveName, false);
 elBtnShow.addEventListener("click", fnShowName, false);
+elBtnReset.addEventListener('click', fnClear, false)
 }()); 
