@@ -156,7 +156,7 @@
             case 12:
                 console.log("K-2SO");
                 myDroid = n1.slice(0, 1).toUpperCase() +
-                        "-2" + n1.slice(0, 2).toUpperCase();
+                        "-2" + n2.slice(0, 2).toUpperCase();
                 break;            
         
             default:
