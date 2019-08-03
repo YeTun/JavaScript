@@ -26,6 +26,15 @@
         elSwForm.reset();
     }
 
+    // Output result clear
+    function fnClearResult() {
+        elNameYou.innerHTML = "";
+        elNameDroid.innerHTML = "";
+        elNameType.innerHTML = "";
+        elDroidPic.src = "";
+        elErrorMsg.textContent = "";
+    }
+
     // Function that collects Input, Processes it, and displays Output
     function fnGo() {
         // Store the values typed into the Input Fields
@@ -34,7 +43,7 @@
             valInDOB = document.getElementById("inDOB").value;
         
         // if...else Conditional Statement to check if the Input Fields are NOT empty
-        if((valInFirst !== "") && (valInLast !== "") && (valInDOB !== "")) {
+        if ((valInFirst !== "") && (valInLast !== "") && (valInDOB !== "")) {
             // Hide the Error Message Div if NO errors
             elErrorMsg.style.display = "none";
 
@@ -49,7 +58,7 @@
             
             // Check if a Droid Name requires "A" or "An" grammer
             // "An" grammer needed for Droid Types of 0 and 2
-            if((randomDroid === 0) || (randomDroid === 1)) {
+            if((randomDroid === 0) || (randomDroid === 2)) {
                 // Display the Droid Type based on the Random Number
                 elNameType.innerHTML = "You are an " + droidType[randomDroid] + "Droid.";
                 // Display the Droid Picture in the empty <img>
@@ -77,6 +86,7 @@
     function fnDroidNameGen(n1, n2, dob) {
         // Starting at the 5 position and going to the 7th, slice the Month portion
         // of the Date input, then convert it to an Integer, and save it to a Variable
+        console.log(dob);
         var no = parseInt(dob.slice(5, 7), 10);
         // Create a Variable to hold the current Droid Name
         var myDroid = "";
@@ -86,7 +96,7 @@
             // ...generate a Random Number, rounded up, based on 12 months
             no = Math.ceil(Math.random() * 12);
             // Display the Random (Month) Number in the Developer Console
-            console.log(no);
+            // console.log(no);
         }
 
         // Based on the User's Month, choose a Droid Name Scheme.
@@ -123,12 +133,13 @@
                 break;
 
             case 6:
-                console.log("BT-1");
-                myDroid = n1.slice(0, 2).toUpperCase() + "-" + no;
+                console.log("R3-S6");
+                myDroid = n1.slice(0, 1).toUpperCase() + no/2 +
+                        "-" + n2.slice(0, 1).toUpperCase() + no;
                 break;
             
             case 7:
-                console.log("BT-1");
+                console.log("FX-7");
                 myDroid = n1.slice(0, 2).toUpperCase() + "-" + no;
                 break;
 
@@ -172,5 +183,5 @@
     // When the Go Button is clicked, run the fnGo() function
     elBtnGo.addEventListener("click", fnGo, false);
     // When th Cleaqr Button is clicked, run the fnClearForm() function
-    elBtnClear.addEventListener("click", fnClearForm, false);    
+    elBtnClear.addEventListener("click", (fnClearForm, fnClearResult), false);    
 }());
