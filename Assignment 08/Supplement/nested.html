@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Creating a JSON nested object
+            var employeesJSON = {
+                "Todd": {
+                    "firstName": "Todd",
+                    "lastName": "Grover",
+                    "gender": "Male",
+                    "salary": 50000
+                },
+                "Sara": {
+                    "firstName": "Sara",
+                    "lastName": "Baker",
+                    "gender": "Female",
+                    "salary": 40000
+                }
+            };
+
+            // $('#resultDiv').html(employeesJSON.Sara.salary);
+            $('#resultDiv').html(employeesJSON.Todd.gender);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

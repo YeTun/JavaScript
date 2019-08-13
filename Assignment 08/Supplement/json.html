@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Creating a JSON object
+            var employeeJSON = {
+                "firstName": "Todd",
+                "lastName": "Grover",
+                "gender": "Male",
+                "salary": 50000
+            };
+
+            // Accessing data from a JSON object
+            var result = '';
+            result += 'First Name = ' + employeeJSON.firstName + '<br/>';
+            result += 'Last Name = ' + employeeJSON.lastName + '<br/>';
+            result += 'Gender = ' + employeeJSON.gender + '<br/>';
+            result += 'Salary = ' + employeeJSON.salary + '<br/>';
+
+            $('#resultDiv').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

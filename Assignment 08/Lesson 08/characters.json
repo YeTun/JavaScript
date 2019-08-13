@@ -1,0 +1,70 @@
+{
+    "allChars" : [
+        {
+            "name" : "Spider-Man",
+            "graphic" : "spiderman.png",
+            "origin" : "Bitten by a radioactive spider.",
+            "powers" : [
+                {
+                "p1" : "Spidey-Sense",
+                "p2" : "Wall-Crawling"
+                }
+            ]        
+        },
+        {
+            "name": "Daredevil",
+            "graphic": "daredevil.png",
+            "origin": "A blind lawyer that kicks ass.",
+            "powers": [
+                {
+                    "p1": "Rader Sense",
+                    "p2": "Martial Arts"
+                }
+            ]
+        },
+        {
+            "name": "Squirrel Girl",
+            "graphic": "squirrelgirl.png",
+            "origin": "Part girl, part squirrel.",
+            "powers": [
+                {
+                    "p1": "Squirrel language",
+                    "p2": "Unbeatable"
+                }
+            ]
+        },
+        {
+            "name": "Jean Grey",
+            "graphic": "jeangrey.png",
+            "origin": "Mutant with psychic ability.",
+            "powers": [
+                {
+                    "p1": "Telepathy",
+                    "p2": "Telekenesis"
+                }
+            ]
+        },
+        {
+            "name": "Super-Skrull",
+            "graphic": "superskrull.png",
+            "origin": "Shapeshifter will all the powers of the Fantastic Four .",
+            "powers": [
+                {
+                    "p1": "Flight",
+                    "p2": "Pyrokenesis"
+                }
+            ]
+        },
+        {
+            "name": "Dr. Doom",
+            "graphic": "drdoom.png",
+            "origin": "Genius tyrant.",
+            "powers": [
+                {
+                    "p1": "Supergeneus-level intellect",
+                    "p2": "Forece blasts"
+                }
+            ]
+        }
+    ]
+}

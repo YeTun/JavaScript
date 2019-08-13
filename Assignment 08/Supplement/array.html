@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Creating a JSON array object
+            var employeesJSON = [
+                {
+                    "firstName": "Todd",
+                    "lastName": "Grover",
+                    "gender": "Male",
+                    "salary": 50000
+                },
+                {
+                    "firstName": "Sara",
+                    "lastName": "Baker",
+                    "gender": "Female",
+                    "salary": 40000
+                }];
+
+            // $('#resultDiv').html(employeesJSON[1].firstName);
+            $('#resultDiv').html(employeesJSON[0].lastName);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

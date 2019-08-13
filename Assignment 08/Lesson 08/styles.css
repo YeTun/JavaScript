@@ -1,0 +1,23 @@
+body {
+    font-family: 'Times New Roman', Times, serif;    
+    font-size: 1.5em;
+    width: 75%;
+    margin: auto;
+}
+
+#divTwoCol {
+    width: 100%;
+}
+
+#divLeftCol {
+    float: right;
+    width: 50%;
+    text-align: center;
+    color: red;    
+}
+
+#divRightCol {
+    float: right;
+    width: 50%;
+    color: blue;
+}

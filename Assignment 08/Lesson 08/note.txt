@@ -1,0 +1,34 @@
+https://vmcink.files.wordpress.com/2016/10/spiderman.png
+https://vmcink.files.wordpress.com/2016/10/daredevil.png
+https://vmcink.files.wordpress.com/2016/10/squirrelgirl.png
+https://vmcink.files.wordpress.com/2016/10/jeangrey.png
+https://vmcink.files.wordpress.com/2016/10/superskrull.png
+https://vmcink.files.wordpress.com/2016/10/drdoom.png
+https://vmcink.files.wordpress.com/2016/10/invisiblewoman.png
+https://vmcink.files.wordpress.com/2016/10/venom.png
+https://vmcink.files.wordpress.com/2016/10/blackcat.png
+https://vmcink.files.wordpress.com/2016/10/thing.png
+https://vmcink.files.wordpress.com/2016/10/kingpin.png
+https://vmcink.files.wordpress.com/2016/10/magneto.png
+
+strName += "<p><img src='" + "./img/" + charObj.allChars[randomChar].graphic + "'></p>";
+strName += "<p>" + charObj.allChars[randomChar].name + "</p>";
+
+strName += `<p><img src='./img/${charObj.allChars[randomChar].graphic}'></p>`;
+strName += `<p>${charObj.allChars[randomChar].name}</p>`;
+
+
+strStats += "<p>Origin: " + charObj.allChars[randomChar].origin" + "</p>";
+strStats += "<p>Powers:<br><ul>" +
+                "<li>" + charObj.allChars[randomChar].powers[0].p1 + "</li>" +
+                "<li>" + charObj.allChars[randomChar].powers[0].p2 + "</li>" +
+            "</ul></p>";
+
+strStats += `<p>Origin: ${charObj.allChars[randomChar].origin}</p>`
+strStats += `<p>
+                Powers:<br>
+                <ul>
+                <li>${charObj.allChars[randomChar].powers[0].p1}</li>
+                <li>${charObj.allChars[randomChar].powers[0].p2}</li>
+                </ul>
+            </p>`;
