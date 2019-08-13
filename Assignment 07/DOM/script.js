@@ -167,7 +167,7 @@
             case 12:
                 console.log("K-2SO");
                 myDroid = n1.slice(0, 1).toUpperCase() +
-                        "-2" + n1.slice(0, 2).toUpperCase();
+                        "-2" + n2.slice(0, 2).toUpperCase();
                 break;            
         
             default:
@@ -183,5 +183,10 @@
     // When the Go Button is clicked, run the fnGo() function
     elBtnGo.addEventListener("click", fnGo, false);
     // When th Cleaqr Button is clicked, run the fnClearForm() function
+<<<<<<< HEAD
     elBtnClear.addEventListener("click", (fnClearForm, fnClearResult), false);    
 }());
+=======
+    elBtnClear.addEventListener("click", fnClearForm, false);    
+}());
+>>>>>>> ed348bcbc295ca1743814d0635bce07e90b15217
