@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width">
+    <title>jQuery Mobile</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+    <section data-role="page" id="home">
+        <header data-role="header">
+            <h1>Top</h1>
+            <nav data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-transition="flip">Home</a></li>
+                <li><a href="#page2" data-icon="star" data-transition="flip">Page2</a></li>
+            </ul>
+            </nav>
+            <a href="#info" data-icon="user" data-iconpos="notext" data-transition="pop" class="ui-btn-right">info</a>
+        </header>
+        <article role="main" class="ui-content">
+            <h2>Middle of screen</h2>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h4>Bottom of screen</h4>
+        </footer>
+    </section>    
+
+    <section data-role="page" id="page2">
+        <header data-role="header">
+            <h1>Page 2</h1>
+            <nav data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home" data-transition="flip">Home</a></li>
+                <li><a href="#page2" data-icon="star" data-transition="flip">Page2</a></li>
+            </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <h2>Page 2 content</h2>
+            <p>Click for the side panel</p>
+            <p><a href="#sidePanel" data-role="button" data-icon="bars">Side panel</a></p>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h4>Page 2 footer</h4>
+        </footer>
+        <aside data-role="panel" id="sidePanel">
+            <h1>Side</h1>
+            <p>Content</p>
+        </aside>
+    </section>
+
+    <section data-role="page" data-dialog="true" id="info">
+        <header data-role="header">
+            <h1>ME Computer</h1>
+        </header>
+        <article role="main" class="ui-content">
+            <ul>
+                <li>Training</li>
+                <li>Sales</li>
+                <li>Services</li>
+            </ul>
+        </article>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</body>
+<!-- 
+    Name:           Ye Tun Aung
+    Email:          yta.megroup@gmail.com
+    Project:        jQuery Mobile
+    Description:    Look at jQuery
+    Date:           August 23, 2019
+-->
+</html>

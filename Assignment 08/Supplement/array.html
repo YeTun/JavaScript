@@ -21,7 +21,10 @@
                 }];
 
             // $('#resultDiv').html(employeesJSON[1].firstName);
-            $('#resultDiv').html(employeesJSON[0].lastName);
+            var msg = employeesJSON[0].lastName + "<br>";
+            msg += employeesJSON[1].lastName;
+
+            $('#resultDiv').html(msg);
         });
     </script>
 </head>
