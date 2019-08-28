@@ -1,0 +1,66 @@
+https://jquerymobile.com/download/
+https://pouchdb.com/download.html
+https://vmcink.files.wordpress.com/2016/11/aod.jpg
+
+
+Horror Movie Database
+Code    Name                Year
+--------------------------------
+EV1     The Evil Dead       1981
+EV2     Evil Dead 2         1987
+AOD     Army of Darkness    1992
+HA1     Halloween           1978
+SNP     The Snoopy Movie    1972
+YTA     Ye Tun Aung         1968
+
+// String Format
+str = "<p><table id='tableMovies'>" +
+        "<tr><th>Code</th><th>Name</th><th>Year</th><th class='thEmpty'>&nbsp;</th></tr>";
+    
+    for(var i = 0; i < data.length; i++) {
+        str += "<tr><td>" + data[i].doc._id + 
+        "</td><td>" + data[i].doc.mName +
+        "</td><td>" + data[i].doc.mYear +
+        "</td><td class='btnPencil'>&#x270e;</td></tr>";
+    }
+
+    str += "</table></p>";
+    str += "<p class='ui-body ui-body-b'><input type='text' placeholder='AOD' size='10' id='fieldDelete'><button id='btnDelete'>Delete Movie</button></p>"
+
+// Template String
+let str = `
+        <p>
+            <table id='tableMovies'>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th class='thEmpty'>&nbsp;</th>
+                </tr>
+        `;
+
+    for (let i = 0; i < data.length; i++) {
+        str += `<tr>
+                    <td>${data[i].doc._id}</td>
+                    <td>${data[i].doc.mName}</td>
+                    <td>${data[i].doc.mYear}</td>
+                    <td class='btnPencil'>&#x270e;</td>
+                </tr>`;
+    }
+
+    str += `
+            </table>
+        </p>
+        <p>
+            <input type='text' placeholder='AOD' size='10' id='fieldDelete'>
+            <button id='btnDelete'>Delete Movie</button>
+        </p>
+    `;
+
+// Template String
+var str = "";
+
+str += `<input type='text' placeholder='AOD' disabled hidden id='fieldUpdateCode'><br>
+        <input type='text' placeholder='Army of Darkness' id='fieldUpdateName'><br>
+        <input type='number' placeholder='1992' id='fieldUpdateYear'><br>
+        <button id='btnUpdate'>Update Movie</button>`;

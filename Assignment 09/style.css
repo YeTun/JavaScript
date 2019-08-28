@@ -1,0 +1,37 @@
+.imgSplash {
+    width: 100%;
+}
+
+.h1Splash {
+    text-align: center;
+}
+
+#tableMovies {
+    background-color: azure;
+    width: 100%;
+    margin: auto;
+    word-wrap: break-word;
+    table-layout: fixed;
+    text-shadow: none;
+}
+
+#tableMovies .thEmpty,
+#tableMovies .btnPencil {
+    width: 10%;
+    text-align: center;
+}
+
+#tableMovies th {
+    background-color: dimgray;
+    color: white;
+}
+
+#tableMovies tr:nth-of-type(odd) {
+    background-color: powderblue;
+    color: midnightblue;
+}
+
+#tableMovies tr:nth-of-type(even) {
+    background-color: skyblue;
+    color: midnightblue;
+}

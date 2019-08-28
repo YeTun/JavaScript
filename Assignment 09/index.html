@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+	<title>Final Project Practice</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section data-role="page" id="splash">
+		<article role="main" class="ui-content">
+			<img src="aod.jpg" alt="Army of Darkness" class="imgSplash">
+			<h1 class="h1Splash">Horror Movie Database</h1>
+		</article>
+	</section>
+
+	<section data-role="page" id="home">
+		<header data-role="header" data-position="fixed">
+			<h1>H M Db</h1>
+		</header>
+		<article role="main" class="ui-content">
+			<div data-role="collapsible" data-collapsed-icon="carat-u" data-expanded-icon="carat-d" data-collapsed="false">
+				<h2>Save a Movie</h2>
+				<form class="ui-body ui-body-a ui-corner-all" id="formMovie">
+					<label for="fieldCode">Code:</label>
+					<input type="text" placeholder="AOD" name="fieldCode" id="fieldCode"><br>
+					<label for="fieldName">Name:</label>
+					<input type="text" placeholder="Army of Darkness" name="fieldName" id="fieldName"><br>
+					<label for="fieldYear">Year:</label>
+					<input type="number" placeholder="1992" name="fieldYear" id="fieldYear"><br>
+
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<input type="reset" value="Reset" id="btnReset">
+						</div>
+						<div class="ui-block-b">
+							<input type="button" value="Save" id="btnSave">
+						</div>
+						<div class="ui-block-c">
+							<input type="button" value="Show" id="btnShow">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="divShow"></div>
+
+			<div data-role="popup" class="ui-content" id="popSaved">Movie saved</div>
+			<div data-role="popup" class="ui-content" id="popDeleted">Movie erased</div>
+			<div data-role="popup" class="ui-content" id="popErrorCode">ERROR: Fill all fields.</div>
+			<div data-role="popup" class="ui-content" id="popErrorDupe">ERROR: Movie already saved.</div>
+			<div data-role="popup" class="ui-content" id="popErrorNull">ERROR: Movie does not exit</div>
+
+			<div data-role="popup" data-dialog="true" id="popMovieUpdate">
+				<a href="#home" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+				<header data-role="header">
+					<h1 id="h1Update">Updating</h1>
+				</header>
+				<article role="main" class="ui-content">
+					<div id="divEdit"></div>
+				</article>
+			</div>
+		</article>
+		<footer data-role="footer" data-position="fixed">
+			<h4>&nbsp;</h4>
+			<a href="#options" data-icon="gear" data-iconpos="notext" data-transition="pop" class="ui-btn-right">Options</a>
+		</footer>
+	</section>
+
+	<section data-role="page" data-dialog="true" id="options">
+		<header data-role="header">
+			<h1>Options</h1>
+		</header>
+		<article role="main" class="ui-content">
+			<p>Something interesting</p>
+			<a href="#" class="ui-btn ui-corner-all ui-btn-b ui-shadow" id="btnNuke">Delete All Movies</a>
+		</article>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/pouchdb/6.0.7/pouchdb.min.js"></script>
+	<script src="script.js"></script>
+</body>
+	<!-- 
+	Name:		Ye Tun Aung (yta.megroup@gmail.com)
+	Project:	PouchDB Practice
+	Date:		August 28, 2019
+	Description:Final Project with a focus on PouchDB for saving Data.
+	-->
+</html>
